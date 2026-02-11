@@ -1,130 +1,199 @@
-const hamBtn = document.querySelector(".ham-btn");
-const nav = document.querySelector(".nav");
-
-hamBtn.addEventListener("click", () => {
-  nav.classList.toggle("dis");
-  document.body.classList.toggle("overflow");
-});
-const day = document.querySelector(".day");
-
-day.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  day.style.display = "none";
-  night.style.display = "block";
-});
-const night = document.querySelector(".night");
-
-night.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  night.style.display = "none";
-  day.style.display = "block";
+// ===== PRELOADER =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const preloader = document.querySelector('.pre-loader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
+  }, 2000);
 });
 
-const preloader = document.querySelector(".pre-loader");
+// ===== THEME TOGGLE =====
+const themeToggle = document.querySelector('.theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const icon = themeToggle.querySelector('i');
+    icon.classList.toggle('fa-sun');
+    icon.classList.toggle('fa-moon');
+    
+    // Save preference
+    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+  });
 
-window.addEventListener("load", () => (preloader.style.display = "none"));
+  // Load saved theme preference
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+    themeToggle.querySelector('i').classList.add('fa-sun');
+    themeToggle.querySelector('i').classList.remove('fa-moon');
+  }
+}
 
+// ===== MOBILE MENU TOGGLE =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-const conbtn = document.querySelector(".conbtn");
-const navBtn1 = document.querySelector(".nav-btn1");
-const navBtn2 = document.querySelector(".nav-btn2");
-const navBtn3 = document.querySelector(".nav-btn3");
-const navBtn4 = document.querySelector(".nav-btn4");
-const navBtn5 = document.querySelector(".nav-btn5");
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}
 
-const about = document.querySelector(".row");
-const skills = document.querySelector(".skills");
-const portfolio = document.querySelector(".portfolios");
-const services = document.querySelector(".services");
-const contact = document.querySelector(".contact");
+// Close menu when link is clicked
+const navItems = document.querySelectorAll('.nav-links a');
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    if (navLinks) {
+      navLinks.classList.remove('active');
+    }
+  });
+});
 
-navBtn2.addEventListener('click',() =>{
-portfolio.classList.remove("sec-dis")
-about.classList.remove("sec-dis")
-services.classList.remove("sec-dis")
+// ===== SMOOTH SCROLLING =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 
-contact.classList.remove("sec-dis")
+// ===== STATS COUNTER ANIMATION =====
+const statsSection = document.querySelector('.stats');
+const statNumbers = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
 
-navBtn5.classList.remove("active")
+if (statsSection && statNumbers.length > 0) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !statsAnimated) {
+        statsAnimated = true;
+        statNumbers.forEach(stat => {
+          const target = parseInt(stat.getAttribute('data-target'));
+          let current = 0;
+          const increment = Math.ceil(target / 60);
+          
+          const counterInterval = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              stat.textContent = target;
+              clearInterval(counterInterval);
+            } else {
+              stat.textContent = current;
+            }
+          }, 30);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  statsObserver.observe(statsSection);
+}
 
-navBtn1.classList.remove("active")
-navBtn3.classList.remove("active")
-navBtn4.classList.remove("active")
+// ===== TESTIMONIALS CAROUSEL =====
+let currentSlide = 1;
+const slides = document.querySelectorAll('.testimonial-card');
+const dots = document.querySelectorAll('.carousel-dots .dot');
+let autoRotateInterval;
 
-navBtn2.classList.add("active")
-skills.classList.add("sec-dis")
-nav.classList.toggle("dis");
-document.body.classList.toggle("overflow");
+function showSlide(n) {
+  currentSlide = n; // Update global currentSlide
+  
+  // Hide all slides
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+  
+  // Remove active class from all dots
+  dots.forEach(dot => {
+    dot.classList.remove('active');
+  });
+  
+  // Show current slide
+  if (slides[n - 1]) {
+    slides[n - 1].classList.add('active');
+    if (dots[n - 1]) {
+      dots[n - 1].classList.add('active');
+    }
+  }
+}
 
-})
-navBtn1.addEventListener('click',() =>{
-portfolio.classList.remove("sec-dis")
-about.classList.add("sec-dis")
-navBtn1.classList.add("active")
-navBtn3.classList.remove("active")
-navBtn4.classList.remove("active")
-contact.classList.remove("sec-dis")
+function nextSlide() {
+  let next = currentSlide + 1;
+  if (next > slides.length) {
+    next = 1;
+  }
+  showSlide(next);
+}
 
-navBtn5.classList.remove("active")
-services.classList.remove("sec-dis")
-navBtn2.classList.remove("active")
-skills.classList.remove("sec-dis")
-nav.classList.toggle("dis");
-document.body.classList.toggle("overflow");
+function prevSlide() {
+  let prev = currentSlide - 1;
+  if (prev < 1) {
+    prev = slides.length;
+  }
+  showSlide(prev);
+}
 
-})
-navBtn3.addEventListener('click',() =>{
-portfolio.classList.add("sec-dis")
-about.classList.remove("sec-dis")
-navBtn1.classList.remove("active")
-navBtn3.classList.add("active")
-navBtn4.classList.remove("active")
-contact.classList.remove("sec-dis")
+function autoRotate() {
+  nextSlide();
+}
 
-navBtn5.classList.remove("active")
-services.classList.remove("sec-dis")
-navBtn2.classList.remove("active")
-skills.classList.remove("sec-dis")
-nav.classList.toggle("dis");
-document.body.classList.toggle("overflow");
+function resetAutoRotate() {
+  clearInterval(autoRotateInterval);
+  autoRotateInterval = setInterval(autoRotate, 5000);
+}
 
-})
-navBtn4.addEventListener('click',() =>{
-portfolio.classList.remove("sec-dis")
-about.classList.remove("sec-dis")
-navBtn1.classList.remove("active")
-navBtn3.classList.remove("active")
-navBtn4.classList.add("active")
-contact.classList.remove("sec-dis")
+// Initialize carousel
+if (slides.length > 0) {
+  showSlide(1);
+  autoRotateInterval = setInterval(autoRotate, 5000);
+  
+  // Add click listeners to dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index + 1);
+      resetAutoRotate();
+    });
+  });
+  
+  // Add click listeners to prev/next buttons
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoRotate();
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoRotate();
+    });
+  }
+}
 
-navBtn5.classList.remove("active")
-services.classList.add("sec-dis")
-navBtn2.classList.remove("active")
-skills.classList.remove("sec-dis")
-nav.classList.toggle("dis");
-document.body.classList.toggle("overflow");
+// ===== SCROLL ANIMATION =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
 
-})
-navBtn5.addEventListener('click',() =>{
-portfolio.classList.remove("sec-dis")
-about.classList.remove("sec-dis")
-navBtn1.classList.remove("active")
-navBtn3.classList.remove("active")
-navBtn4.classList.remove("active")
-contact.classList.add("sec-dis")
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
 
-navBtn5.classList.add("active")
-services.classList.remove("sec-dis")
-navBtn2.classList.remove("active")
-skills.classList.remove("sec-dis")
-nav.classList.toggle("dis");
-document.body.classList.toggle("overflow");
-
-})
-conbtn.addEventListener('click',() =>{
-about.classList.remove("sec-dis")
-navBtn1.classList.remove("active")
-contact.classList.add("sec-dis")
-navBtn5.classList.add("active")
-
-})
+// Observe all sections for animation
+document.querySelectorAll('section').forEach(section => {
+  section.style.opacity = '0';
+  observer.observe(section);
+});
