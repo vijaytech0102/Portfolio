@@ -1,441 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijay Yadav - Full Stack Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Yadav - Full Stack Developer</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-  <!-- Preloader -->
-  <div class="pre-loader">
-    <i class="fas fa-spinner loader"></i>
+  <body>
+    <!-- Preloader -->
+    <div class="pre-loader">
+      <i class="fas fa-spinner loader"></i>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Vijay</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="menu-toggle fas fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-background">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Hi, I'm <span class="highlight">Vijay
+              Yadav</span></h1>
+          <p class="subtitle">Java Full-Stack & Cloud Developer</p>
+          <p class="description">
+            I build scalable web applications using Java, Spring Boot, Angular,
+            and MySQL,
+            with hands-on experience in cloud platforms like AWS.
+            Focused on clean architecture, REST APIs, and deploying secure,
+            production-ready applications.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+As a dedicated Software Engineer, I specialize in Java Full-Stack Development using 
+Spring Boot, Angular, RESTful APIs, and relational databases. 
+I focus on writing clean, maintainable code and building high-performance enterprise applications. 
+I am continuously improving my problem-solving skills through Data Structures & Algorithms 
+and expanding my expertise in cloud and DevOps practices.
+</p>
+
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fas fa-code"></i>
+              <h3>Languages</h3>
+            </div>
+            <p>Java, C++, C, Python,JavaScript</p>
+            <div class="skill-items">
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fas fa-palette"></i>
+              <h3>Frontend</h3>
+            </div>
+            <p>Angular, HTML5, CSS3, Bootstrap</p>
+            <div class="skill-items">
+              <span class="skill-badge">Angular</span>
+              <span class="skill-badge">HTML5</span>
+              <span class="skill-badge">CSS3</span>
+              <span class="skill-badge">Bootstrap</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fas fa-server"></i>
+              <h3>Backend</h3>
+            </div>
+            <p>Spring Boot, Java, MySQL</p>
+            <div class="skill-items">
+              <span class="skill-badge">Spring Boot</span>
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">MySQL</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <i class="fas fa-tools"></i>
+              <h3>Tools</h3>
+            </div>
+            <p>Aws,Git, GitHub, VS Code, Postman</p>
+            <div class="skill-items">
+              <span class="skill-badge">Aws</span>
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+              <span class="skill-badge">Postman</span>
+              <span class="skill-badge">Eclipse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+  <div class="container">
+    <h2>Featured Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- 1. Pizza Order Manager -->
+      <div class="project-card">
+        <div class="project-category">Full Stack Web Application</div>
+        <h3>Pizza Order Management System</h3>
+        <p>
+          A full-stack food ordering system built using Java Spring Boot and MySQL.
+          It supports order placement, real-time status tracking, and admin-based
+          order management with RESTful APIs.
+        </p>
+        <div class="project-tech">
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>Hibernate</span>
+          <span>MySQL</span>
+          <span>REST API</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="#" target="_blank" class="btn btn-small btn-secondary">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Blog Platform -->
+      <div class="project-card">
+        <div class="project-category">Enterprise Application</div>
+        <h3>Blog Management Platform</h3>
+        <p>
+          A secure blog platform with user authentication, role-based access,
+          content publishing, and admin dashboard built using Spring Boot and JWT authentication.
+        </p>
+        <div class="project-tech">
+          <span>Java</span>
+          <span>Spring Security</span>
+          <span>JWT</span>
+          <span>MySQL</span>
+          <span>Angular</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="#" target="_blank" class="btn btn-small btn-secondary">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Study Buddy -->
+      <div class="project-card">
+        <div class="project-category">Real-Time Application</div>
+        <h3>Study Buddy – Collaborative Learning Platform</h3>
+        <p>
+          A real-time student collaboration platform featuring group discussions,
+          resource sharing, and live chat integration using WebSocket technology.
+        </p>
+        <div class="project-tech">
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>WebSocket</span>
+          <span>MongoDB</span>
+          <span>Angular</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="#" target="_blank" class="btn btn-small btn-secondary">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Weather App -->
+      <div class="project-card">
+        <div class="project-category">API Integration</div>
+        <h3>Weather Forecast System</h3>
+        <p>
+          A weather forecasting application integrating external REST APIs
+          to fetch real-time weather data based on location search with dynamic UI updates.
+        </p>
+        <div class="project-tech">
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>REST Template</span>
+          <span>OpenWeather API</span>
+          <span>Angular</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="#" target="_blank" class="btn btn-small btn-secondary">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Form Validator -->
+      <div class="project-card">
+        <div class="project-category">Frontend + Backend Validation</div>
+        <h3>Advanced Form Validation System</h3>
+        <p>
+          A robust form validation system implementing client-side and server-side
+          validation using Angular and Spring Boot with custom exception handling.
+        </p>
+        <div class="project-tech">
+          <span>Angular</span>
+          <span>TypeScript</span>
+          <span>Spring Boot</span>
+          <span>Hibernate Validator</span>
+          <span>MySQL</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="#" target="_blank" class="btn btn-small btn-secondary">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Krishak Project -->
+      <div class="project-card">
+        <div class="project-category">Smart Agriculture Platform</div>
+        <h3>Krishak – Smart Agriculture Management System</h3>
+        <p>
+          A comprehensive agriculture management system designed for farmers
+          to manage crop records, check real-time mandi prices, and receive
+          AI-based farming recommendations through REST APIs.
+        </p>
+        <div class="project-tech">
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>Hibernate</span>
+          <span>MySQL</span>
+          <span>REST API</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="#" target="_blank" class="btn btn-small btn-secondary">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle"><i class="fas fa-moon"></i></button>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="logo">Vijay</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <i class="menu-toggle fas fa-bars"></i>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-background">
-      <div class="floating-shape shape-1"></div>
-      <div class="floating-shape shape-2"></div>
-      <div class="floating-shape shape-3"></div>
-    </div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">Hi, I'm <span class="highlight">Vijay Yadav</span></h1>
-        <p class="subtitle">Full-Stack Developer & Open Source Enthusiast</p>
-        <p class="description">I build modern web applications using MERN stack. Passionate about clean code, open-source contributions, and continuous learning. 🚀</p>
-        <div class="cta-buttons">
-          <a href="#projects" class="btn btn-primary">
-            <span>View My Work</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <span>Get in Touch</span>
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <span>Scroll to explore</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I'm a passionate full-stack developer proficient in JavaScript, React, Node.js, and MongoDB. I have a strong foundation in Java, C++, and basic knowledge of Python. Currently, I'm enhancing my Data Structures & Algorithms skills and exploring cloud computing.</p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-header">
-            <i class="fas fa-code"></i>
-            <h3>Languages</h3>
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+      <div class="container">
+        <h2>My Impact</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3 class="stat-number" data-target="15">0</h3>
+            <p>Projects Completed</p>
           </div>
-          <p>JavaScript, Java, C++, C, Python</p>
-          <div class="skill-items">
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">Java</span>
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">Python</span>
+          <div class="stat-card">
+            <h3 class="stat-number" data-target="70">0</h3>
+            <p>Pull Requests Merged</p>
           </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <i class="fas fa-palette"></i>
-            <h3>Frontend</h3>
+          <div class="stat-card">
+            <h3 class="stat-number" data-target="5">0</h3>
+            <p>Years in Development</p>
           </div>
-          <p>React, HTML5, CSS3, Bootstrap</p>
-          <div class="skill-items">
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">HTML5</span>
-            <span class="skill-badge">CSS3</span>
-            <span class="skill-badge">Bootstrap</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <i class="fas fa-server"></i>
-            <h3>Backend</h3>
-          </div>
-          <p>Node.js, Express.js, MongoDB</p>
-          <div class="skill-items">
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Express</span>
-            <span class="skill-badge">MongoDB</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <i class="fas fa-tools"></i>
-            <h3>Tools</h3>
-          </div>
-          <p>Git, GitHub, VS Code, Postman</p>
-          <div class="skill-items">
-            <span class="skill-badge">Git</span>
-            <span class="skill-badge">GitHub</span>
-            <span class="skill-badge">VS Code</span>
-            <span class="skill-badge">Postman</span>
+          <div class="stat-card">
+            <h3 class="stat-number" data-target="100">0</h3>
+            <p>Satisfied Collaborators (%)</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <h2>Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-category">Web App</div>
-          <h3>Pizza Order Manager</h3>
-          <p>Order tracking system with real-time updates and customer notifications</p>
-          <div class="project-tech">
-            <span>JavaScript</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
-          </div>
-          <a href="https://vijaytech0102.github.io/Pizza-order/" target="_blank" class="btn btn-small">
-            <i class="fas fa-external-link-alt"></i> View Project
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="project-category">Full-Stack</div>
-          <h3>Blog Platform</h3>
-          <p>Full-stack blog application with user authentication and content management</p>
-          <div class="project-tech">
-            <span>PHP</span>
-            <span>Laravel</span>
-            <span>MySQL</span>
-          </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">
-            <i class="fas fa-lock"></i> Coming Soon
-          </button>
-        </div>
-        <div class="project-card">
-          <div class="project-category">MERN Stack</div>
-          <h3>Study Buddy</h3>
-          <p>Collaborative learning platform for students with real-time chat</p>
-          <div class="project-tech">
-            <span>React</span>
-            <span>Node.js</span>
-            <span>MongoDB</span>
-          </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">
-            <i class="fas fa-lock"></i> Coming Soon
-          </button>
-        </div>
-        <div class="project-card">
-          <div class="project-category">API Integration</div>
-          <h3>Weather App</h3>
-          <p>Real-time weather forecast with location-based search and animations</p>
-          <div class="project-tech">
-            <span>React</span>
-            <span>OpenWeather API</span>
-            <span>CSS3</span>
-          </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">
-            <i class="fas fa-lock"></i> Coming Soon
-          </button>
-        </div>
-        <div class="project-card">
-          <div class="project-category">JavaScript</div>
-          <h3>Form Validator</h3>
-          <p>Advanced form validation with real-time feedback and error handling</p>
-          <div class="project-tech">
-            <span>JavaScript</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
-          </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">
-            <i class="fas fa-lock"></i> Coming Soon
-          </button>
-        </div>
-        <div class="project-card">
-          <div class="project-category">Web App</div>
-          <h3>Krishak</h3>
-          <p>Agriculture management system for farmers with market prices and tips</p>
-          <div class="project-tech">
-            <span>JavaScript</span>
-            <span>Node.js</span>
-            <span>MongoDB</span>
-          </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">
-            <i class="fas fa-lock"></i> Coming Soon
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats" id="stats">
-    <div class="container">
-      <h2>My Impact</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h3 class="stat-number" data-target="15">0</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div class="stat-card">
-          <h3 class="stat-number" data-target="70">0</h3>
-          <p>Pull Requests Merged</p>
-        </div>
-        <div class="stat-card">
-          <h3 class="stat-number" data-target="5">0</h3>
-          <p>Years in Development</p>
-        </div>
-        <div class="stat-card">
-          <h3 class="stat-number" data-target="100">0</h3>
-          <p>Satisfied Collaborators (%)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <h2>What People Say</h2>
-      <div class="testimonials-carousel">
-        <div class="testimonial-card active">
-          <div class="testimonial-content">
-            <p>"Vijay is an exceptional developer with strong problem-solving skills. His contributions to our project were outstanding and he delivered quality code consistently."</p>
-            <div class="testimonial-author">
-              <h4>Arjun Singh</h4>
-              <p>Tech Lead at Bytesview Analytics</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2>What People Say</h2>
+        <div class="testimonials-carousel">
+          <div class="testimonial-card active">
+            <div class="testimonial-content">
+              <p>"Vijay is an exceptional developer with strong problem-solving skills. His contributions to our project were outstanding and he delivered quality code consistently."</p>
+              <div class="testimonial-author">
+                <h4>Arjun Singh</h4>
+                <p>Tech Lead at Bytesview Analytics</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
             </div>
           </div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Working with Vijay was a pleasure. He demonstrated great communication, technical expertise, and a willingness to learn. Highly recommended for any team!"</p>
-            <div class="testimonial-author">
-              <h4>Priya Sharma</h4>
-              <p>Manager at S&H Hightech Solution</p>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Working with Vijay was a pleasure. He demonstrated great communication, technical expertise, and a willingness to learn. Highly recommended for any team!"</p>
+              <div class="testimonial-author">
+                <h4>Priya Sharma</h4>
+                <p>Manager at S&H Hightech Solution</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
             </div>
           </div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Vijay's open-source contributions show his passion for coding. He's a quick learner and brings fresh ideas to every project he works on."</p>
-            <div class="testimonial-author">
-              <h4>Rahul Verma</h4>
-              <p>Open Source Mentor</p>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Vijay's open-source contributions show his passion for coding. He's a quick learner and brings fresh ideas to every project he works on."</p>
+              <div class="testimonial-author">
+                <h4>Rahul Verma</h4>
+                <p>Open Source Mentor</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
             </div>
           </div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn prev"><i
+              class="fas fa-chevron-left"></i></button>
+          <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="carousel-btn next"><i
+              class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+      <div class="container">
+        <h2>Case Studies</h2>
+        <div class="case-studies-grid">
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <h3>Pizza Order Manager</h3>
+              <span class="case-study-tag">Full-Stack</span>
+            </div>
+            <div class="case-study-content">
+              <h4>Challenge</h4>
+              <p>Create a real-time order tracking system for a pizza delivery
+                business</p>
+
+              <h4>Solution</h4>
+              <p>Built a responsive web app using JavaScript, providing
+                real-time order status updates and customer notifications</p>
+
+              <h4>Results</h4>
+              <ul>
+                <li>✓ 99% uptime</li>
+                <li>✓ Real-time order tracking</li>
+                <li>✓ 40% faster order processing</li>
+              </ul>
+            </div>
+            <a href="https://vijaytech0102.github.io/Pizza-order/"
+              target="_blank" class="btn btn-small">View Case</a>
+          </div>
+
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <h3>Study Buddy Platform</h3>
+              <span class="case-study-tag">MERN Stack</span>
+            </div>
+            <div class="case-study-content">
+              <h4>Challenge</h4>
+              <p>Develop a collaborative learning platform for students with
+                real-time chat and resource sharing</p>
+
+              <h4>Solution</h4>
+              <p>Developed full-stack application with MongoDB, Express, React,
+                and Node.js featuring live collaboration</p>
+
+              <h4>Results</h4>
+              <ul>
+                <li>✓ 500+ active users</li>
+                <li>✓ Real-time collaboration</li>
+                <li>✓ Improved learning efficiency by 30%</li>
+              </ul>
+            </div>
+            <button class="btn btn-small" onclick="alert('Coming soon')">View
+              Case</button>
+          </div>
+
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <h3>Web Scraping Tool</h3>
+              <span class="case-study-tag">Backend</span>
+            </div>
+            <div class="case-study-content">
+              <h4>Challenge</h4>
+              <p>Build automated web scraping solution for data collection and
+                analysis</p>
+
+              <h4>Solution</h4>
+              <p>Created scalable Django application with Django for efficient
+                data extraction and processing</p>
+
+              <h4>Results</h4>
+              <ul>
+                <li>✓ Automated 1000+ data points daily</li>
+                <li>✓ 85% accuracy rate</li>
+                <li>✓ 50+ hours saved monthly</li>
+              </ul>
+            </div>
+            <button class="btn btn-small" onclick="alert('Coming soon')">View
+              Case</button>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Studies Section -->
-  <section class="case-studies" id="case-studies">
-    <div class="container">
-      <h2>Case Studies</h2>
-      <div class="case-studies-grid">
-        <div class="case-study-card">
-          <div class="case-study-header">
-            <h3>Pizza Order Manager</h3>
-            <span class="case-study-tag">Full-Stack</span>
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>Software Engineer</h3>
+            <p class="company">HCLTech</p>
+            <p class="description">
+              Working as a Java Full-Stack Developer, developing scalable
+              enterprise applications
+              using Java, Spring Boot, Angular, and MySQL.
+              Involved in designing REST APIs, debugging production issues, and
+              deploying applications in cloud environments.
+            </p>
           </div>
-          <div class="case-study-content">
-            <h4>Challenge</h4>
-            <p>Create a real-time order tracking system for a pizza delivery business</p>
-            
-            <h4>Solution</h4>
-            <p>Built a responsive web app using JavaScript, providing real-time order status updates and customer notifications</p>
-            
-            <h4>Results</h4>
-            <ul>
-              <li>✓ 99% uptime</li>
-              <li>✓ Real-time order tracking</li>
-              <li>✓ 40% faster order processing</li>
-            </ul>
-          </div>
-          <a href="https://vijaytech0102.github.io/Pizza-order/" target="_blank" class="btn btn-small">View Case</a>
         </div>
 
-        <div class="case-study-card">
-          <div class="case-study-header">
-            <h3>Study Buddy Platform</h3>
-            <span class="case-study-tag">MERN Stack</span>
+        <h2>Experience & Education</h2>
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>Software Engineer</h3>
+            <p class="company">LTI Mindtree</p>
+            <p class="description">
+              Working as a Java Full-Stack Developer, building scalable web
+              applications using
+              Spring Boot, Angular, and REST APIs. Responsible for backend
+              development,
+              database integration, and deploying applications in cloud
+              environments.
+            </p>
           </div>
-          <div class="case-study-content">
-            <h4>Challenge</h4>
-            <p>Develop a collaborative learning platform for students with real-time chat and resource sharing</p>
-            
-            <h4>Solution</h4>
-            <p>Developed full-stack application with MongoDB, Express, React, and Node.js featuring live collaboration</p>
-            
-            <h4>Results</h4>
-            <ul>
-              <li>✓ 500+ active users</li>
-              <li>✓ Real-time collaboration</li>
-              <li>✓ Improved learning efficiency by 30%</li>
-            </ul>
-          </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">View Case</button>
         </div>
-
-        <div class="case-study-card">
-          <div class="case-study-header">
-            <h3>Web Scraping Tool</h3>
-            <span class="case-study-tag">Backend</span>
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>Software Engineering Intern</h3>
+            <p class="company">Bytesview Analytics</p>
+            <p class="description">Worked on web scraping and Django
+              development</p>
           </div>
-          <div class="case-study-content">
-            <h4>Challenge</h4>
-            <p>Build automated web scraping solution for data collection and analysis</p>
-            
-            <h4>Solution</h4>
-            <p>Created scalable Django application with Django for efficient data extraction and processing</p>
-            
-            <h4>Results</h4>
-            <ul>
-              <li>✓ Automated 1000+ data points daily</li>
-              <li>✓ 85% accuracy rate</li>
-              <li>✓ 50+ hours saved monthly</li>
-            </ul>
+          <div class="experience-item">
+            <h3>Web Development Intern</h3>
+            <p class="company">S&H Hightech Solution</p>
+            <p class="description">Led frontend development team and created
+              modern web interfaces</p>
           </div>
-          <button class="btn btn-small" onclick="alert('Coming soon')">View Case</button>
+          <div class="experience-item">
+            <h3>Course Instructor</h3>
+            <p class="company">C & C++ Programming (2021-2022)</p>
+            <p class="description">Taught project-based training courses</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <h2>Experience & Education</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>Software Engineering Intern</h3>
-          <p class="company">Bytesview Analytics</p>
-          <p class="description">Worked on web scraping and Django development</p>
-        </div>
-        <div class="experience-item">
-          <h3>Web Development Intern</h3>
-          <p class="company">S&H Hightech Solution</p>
-          <p class="description">Led frontend development team and created modern web interfaces</p>
-        </div>
-        <div class="experience-item">
-          <h3>Open Source Contributor</h3>
-          <p class="company">GSSOC'21 & CWOC'21</p>
-          <p class="description">Made 70+ pull requests to various open-source projects</p>
-        </div>
-        <div class="experience-item">
-          <h3>Course Instructor</h3>
-          <p class="company">C & C++ Programming (2021-2022)</p>
-          <p class="description">Taught project-based training courses</p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Let's Connect</h2>
+        <p>Feel free to reach out for collaborations or just a friendly
+          hello!</p>
+        <div class="social-links">
+          <a href="mailto:vijaytech0102@gmail.com" title="Email"><i
+              class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/altairvijay000/"
+            target="_blank"
+            title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/vijaytech0102" target="_blank"
+            title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/altair_vijay" target="_blank"
+            title="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Let's Connect</h2>
-      <p>Feel free to reach out for collaborations or just a friendly hello!</p>
-      <div class="social-links">
-        <a href="mailto:vijaytech0102@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/altairvijay000/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/vijaytech0102" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/altair_vijay" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Vijay Yadav. All rights reserved.</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Vijay Yadav. All rights reserved.</p>
-  </footer>
-
-  <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 
 </html>

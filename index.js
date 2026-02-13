@@ -8,6 +8,48 @@ window.addEventListener('load', () => {
   }, 2000);
 });
 
+// ===== PARALLAX SCROLLING =====
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const parallaxElements = document.querySelectorAll('.floating-shape');
+  
+  parallaxElements.forEach((element, index) => {
+    const speed = 0.5 + (index * 0.1);
+    element.style.transform = `translateY(${scrolled * speed}px)`;
+  });
+});
+
+// ===== MOUSE TILT EFFECT FOR CARDS =====
+const projectCards = document.querySelectorAll('.project-card');
+const skillCards = document.querySelectorAll('.skill-card');
+const statCards = document.querySelectorAll('.stat-card');
+const caseCards = document.querySelectorAll('.case-study-card');
+
+function addTiltEffect(card) {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+  });
+}
+
+projectCards.forEach(card => addTiltEffect(card));
+skillCards.forEach(card => addTiltEffect(card));
+statCards.forEach(card => addTiltEffect(card));
+caseCards.forEach(card => addTiltEffect(card));
+
 // ===== THEME TOGGLE =====
 const themeToggle = document.querySelector('.theme-toggle');
 if (themeToggle) {
@@ -187,6 +229,7 @@ const observer = new IntersectionObserver(function(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+      entry.target.style.opacity = '1';
       observer.unobserve(entry.target);
     }
   });
@@ -196,4 +239,14 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('section').forEach(section => {
   section.style.opacity = '0';
   observer.observe(section);
+});
+
+// ===== GLOW EFFECT ON SCROLL =====
+window.addEventListener('scroll', () => {
+  const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  const glow = Math.sin(scrollProgress * Math.PI * 4) * 0.3 + 0.5;
+  
+  document.querySelectorAll('.stat-number').forEach(el => {
+    el.style.opacity = Math.min(1, glow + 0.5);
+  });
 });
